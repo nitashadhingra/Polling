@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- <link rel="stylesheet" type="text/css" href="css/score.css"> -->.
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <title>Your Poll</title>
+    </head>
+    <body>
+        <div class="container">
+            <header class="jumbotron">
+                <!-- <img src="https://fiverr-res.cloudinary.com/images/q_auto,f_auto/gigs2/129733680/original/d01bcc912a7bed2ddaff952c9db7333547cf98b4/create-5-customized-instagram-highlight-cover-photos-icons.jpg" style="height: 200px; width: 120px;"> -->
+                <div class="container">
+                    <h1>Score Keeper</h1>
+                    <h2>0 to 0</h2>
+                    <p>Playing to: 5</p>
+                </div>
+            </header>
+        
+            <input type="number">
+            <button>Player1</button>
+            <button>Player2</button>
+            <button>Reset</button>
+
+            <div id="link">
+                <input type="text" value="polls/<%= poll._id%>/vote" id="getLink">
+                <!-- The button used to copy the text -->
+                <button onclick="getCopy()">Copy text</button>
+            </div>
+        </div>
+        <!-- <script type="text/javascript" src="scorekeeper.js"></script> -->
+        <script type="text/javascript" src="javascripts/result.js"></script>
+    </body>
+</html>

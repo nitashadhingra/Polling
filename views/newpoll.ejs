@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <script src="style.js"></script>
+        <title>Live Poll</title>
+        <!-- <style type="text/css">
+            .btn{
+                font-size: 25px;
+                color: orange;
+                border: 2px solid black;
+                padding: 5px;
+                margin: 10px;
+            }
+        </style> -->
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    </head>
+    <body>
+        <div class="container">
+            <header class="jumbotron">
+                <div class="container">
+                    <i class="fas fa-poll-h"></i>
+                    <h2>CREATE YOUR POLL</h2>
+                    <p>Type your question</p>
+                </div>
+            </header>
+        
+            <section>
+                <div id = "optns">
+                    <form action="/polls" method="POST">
+                        <p>
+                            <input id="title" name="heading" placeholder="Title" type="text">
+                        </p>
+                        <p>
+                            <input id="question" name="question" placeholder="Question" type="text">
+                        </p>
+                        <p>
+                            <input class="options" name="A" placeholder="Option" type="text">
+                            <input class="options" name="B" placeholder="Option" type="text">
+                            <input class="options" name="C" placeholder="Option" type="text">
+                            <input class="options" name="D" placeholder="Option" type="text">
+                        </p>
+                        
+                        <!-- <button id="more"><i class="fas fa-plus-circle"></i></button> -->
+                        <p>
+                                <input class="btn btn-sm btn-primary" type="submit" value="CREATE"/><br><br><hr>   
+                        </p>
+                    </form>
+                </div>
+            </section>
+            <!-- <div id = "buttons">
+                <button><a href="result.html">View result</a></button>
+            </div> -->
+    </div>
+    <!-- <script type="text/javascript" src="javascripts/newpoll.js"></script> -->
+    </body>
+</html>
