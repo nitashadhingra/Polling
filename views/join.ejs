@@ -4,11 +4,6 @@
         <title>New Poll</title>
         <!-- <link rel="stylesheet" href="/css/joinpoll.css"> -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-        <!-- <style>
-            body{
-                color: purple;
-            }
-        </style> -->
     </head>
     <body>
         <div class="container">
@@ -21,25 +16,30 @@
         
         
                 <div class="row text-center" style="display: flex; flex-wrap: wrap;" id="bar">
-                    <div class="col-md-3 col-sm-4">
-                        <a class="btn btn-primary btn-sm" id="optn1"><%= poll.A%></a>
-                    </div>
-                    
-                    <div class="col-md-3 col-sm-6">
-                        <a class="btn btn-primary btn-sm" id="optn2"><%= poll.B%></a>
-                    </div>
-                    
-                    <div class="col-md-3 col-sm-6">
-                        <a class="btn btn-primary btn-sm" id="optn3"><%= poll.C%></a>
-                    </div>
+                    <% poll.options.forEach( function(value, key){ %>
+                        
+                            <div class="col-md-3 col-sm-4">
+                                <a class="btn btn-primary btn-sm optn" id="<%= value._id%>"><%= value.name%></a>
+                                <!-- <input type="submit" class="btn btn-primary btn-sm" id="<%= value._id%>" value="<%= value.name%>"/> -->
+                            </div>
+                        <!-- <form action="/" method="POST" id="theForm"></form>
+                        </form> -->
+                    <% }); %>
+                        <!-- <div class="col-md-3 col-sm-6">
+                            <a class="btn btn-primary btn-sm" id="optn2"><%= poll.options.name%></a>
+                        </div>
+                        
+                        <div class="col-md-3 col-sm-6">
+                            <a class="btn btn-primary btn-sm" id="optn3"><%= poll.C%></a>
+                        </div>
 
-                    <div class="col-md-3 col-sm-6">
-                        <a class="btn btn-primary btn-sm" id="optn4"><%= poll.D%></a>
-                    </div>
+                        <div class="col-md-3 col-sm-6">
+                            <a class="btn btn-primary btn-sm" id="optn4"><%= poll.D%></a>
+                        </div> -->
                     
                 </div>
         </div>
-        
-        <!-- <script type="text/javascript" src="joinpoll.js"></script> -->
+        <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+        <script type="text/javascript" src="/javascripts/joinpoll.js"></script>
     </body>
 </html>

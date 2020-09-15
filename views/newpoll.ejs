@@ -4,29 +4,72 @@
         <meta charset="utf-8">
         <script src="style.js"></script>
         <title>Live Poll</title>
-        <!-- <style type="text/css">
-            .btn{
-                font-size: 25px;
-                color: orange;
-                border: 2px solid black;
-                padding: 5px;
-                margin: 10px;
-            }
-        </style> -->
-
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+        <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> -->
     </head>
     <body>
+
+        <h2 class="ui header">
+            <i class="plug icon"></i>
+            <div class="content">
+                CREATE YOUR POLL
+            </div>
+            <div class="sub header">Type your question</div>
+        </h2>
+
         <div class="container">
             <header class="jumbotron">
                 <div class="container">
                     <i class="fas fa-poll-h"></i>
-                    <h2>CREATE YOUR POLL</h2>
-                    <p>Type your question</p>
+                    <p></p>
                 </div>
             </header>
-        
-            <section>
+
+            <form class="ui form" action="/polls" method="POST">
+                <div class="fields">
+                  <div class="eight wide field">
+                    <label>Heading</label>
+                    <input type="text" name="heading" placeholder="Heading">
+                  </div>
+                  
+                  
+                </div>
+                <div class="fields">
+                    <div class="twelve wide field">
+                        <label>Shoot you Question</label>
+                        <input type="text" name="question" placeholder="Question">
+                    
+                    </div>
+                </div>
+                <div class="fields">
+                        <!-- <div class="four wide field">
+                        <label>How many options?</label>
+                        <input class="optn" name="n" type="number" placeholder="1-10?">
+                      </div>
+                      for(var i=0 ; i<n ; i++){
+
+                      } -->
+                      <div class="six wide field">
+                        <label>Option</label>
+                        <input class="optn" name="op" type="text" placeholder="A">
+                      </div>
+                      <div class="six wide field">
+                        <label>Option</label>
+                        <input class="optn" name="op" type="text" placeholder="B">
+                      </div>
+                      <div class="six wide field">
+                        <label>Option</label>
+                        <input class="optn" name="op" type="text" placeholder="C">
+                      </div>
+                      <div class="six wide field">
+                        <label>Option</label>
+                        <input class="optn" name="op" type="text" placeholder="D">
+                      </div>
+                </div>
+              </div>
+              <button class="ui button" type="submit">Submit</button>
+            </form>
+            <!-- <section>
                 <div id = "optns">
                     <form action="/polls" method="POST">
                         <p>
@@ -36,19 +79,19 @@
                             <input id="question" name="question" placeholder="Question" type="text">
                         </p>
                         <p>
-                            <input class="options" name="A" placeholder="Option" type="text">
-                            <input class="options" name="B" placeholder="Option" type="text">
-                            <input class="options" name="C" placeholder="Option" type="text">
-                            <input class="options" name="D" placeholder="Option" type="text">
+                            <input class="options" name="options" placeholder="Option" type="text">
+                            <input class="options" name="options" placeholder="Option" type="text">
+                            <input class="options" name="options" placeholder="Option" type="text">
+                            <input class="options" name="options" placeholder="Option" type="text">
                         </p>
                         
-                        <!-- <button id="more"><i class="fas fa-plus-circle"></i></button> -->
-                        <p>
+                         <button id="more"><i class="fas fa-plus-circle"></i></button> -->
+                        <!-- <p>
                                 <input class="btn btn-sm btn-primary" type="submit" value="CREATE"/><br><br><hr>   
                         </p>
                     </form>
                 </div>
-            </section>
+            </section> --> 
             <!-- <div id = "buttons">
                 <button><a href="result.html">View result</a></button>
             </div> -->
