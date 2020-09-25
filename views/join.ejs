@@ -13,7 +13,7 @@
                         <h2><%= poll.question%></h2>
                     </div>
                 </header>
-        
+                <h6 class="temp" id="<%= poll._id%>"></h6>
         
                 <div class="row text-center" style="display: flex; flex-wrap: wrap;" id="bar">
                     <% poll.options.forEach( function(value, key){ %>

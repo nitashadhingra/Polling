@@ -14,18 +14,27 @@ mongoose.connect('mongodb://localhost/new_db', {
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static('public'));
+app.use(express.json());
 app.set("view engine", "ejs");
 
 
 // mongoose/model config
 const joiningLink = 'https://live.polling.com/vote';
+
+var childSchema = new mongoose.Schema({
+    
+        // type: Map,
+        // of: Number
+        name: String,
+        count: {type: Number, default: 0}
+        // _id: True
+    
+});
+
 var pollSchema = new mongoose.Schema({ 
     heading: String,
     question: String, 
-    options: [{
-        name: String,
-        count: {type: Number, default: 0}
-    }],
+    options: [childSchema],
     url: {
         type: String,
         get: k => `${joiningLink}${k}`
@@ -57,7 +66,53 @@ app.get("/polls/:id/vote/", function (req, res){
 });
 
 app.post("/update", function (req, res){
+    console.log("got a req " , req.body);
+    Poll.findById(req.body.pollID, function(err, v){
+        if(err){
+            console.log(err);
+        } else{
+            console.log("found:" , v);
+            var opt = req.body.voted;
+            v.update({'options.name': opt}, 
+                {$inc : {'options.$.count' : 1}}, function(err,model) {
+                    if(err){
+                     console.log(err);
+                     return res.send(err);
+                 }
+                 return res.json(model);}
+            )
+            console.log("update:" , v);
+            
+            // for(var i=0 ; i < v.options.length ; i++){
+            //     if(v.options[i] == req.params.voted){
+                    
+            //     }
+            // }
+            // v.options.findById(req.params.voted, function(error, result){
+            //     if(error){
+            //         console.log(error);
+            //     } else{
+            //         console.log("voted for" , result);
+            //     }
+            // });
+            // v.options.findOneAndUpdate({_id: req.body.voted}, {$add: [ this.count, 1 ]$add: {friends: friend}});
+            // console.log(v.options.findOne({ _id: req.body.voted }));
 
+            // v.params.options.update(
+            //     {"options.$._id": req.body.voted}, 
+            //     {$inc: {"options.$.count": 1}});
+
+            //     console.log("updated:" , v);
+            //     if(er){
+            //         console.log(er);
+            //     } else{
+            //         console.log("here's what i found" , upvote);
+            //         // res.render("join", {poll : thisPoll});
+            //     }
+            // });
+            res.render("join", {poll : v});
+        }
+    });
 });
 
 app.get("/polls/new", function (req, res){
@@ -90,6 +145,23 @@ app.post("/polls", function(req, res){
             });
         }
     });
+
+    
+    // options: new opt{
+    //     name: 
+    // },
+
+    // newPoll.insertMany(yourOption.map(function(opt){
+        
+    // }));
+    // yourOption.forEach(function(opt){
+    //     console.log(opt);
+    //     newPoll.options.set(opt, 0);
+    //     var optn = {"name": opt, "count": 0};
+    //     Poll.findOneAndUpdate({name: req.body.pollID}, {$push: {friends: friend}});
+    // });
+
+    
 });
 
 app.get("*", function (req, res){
