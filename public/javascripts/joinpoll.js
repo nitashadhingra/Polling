@@ -12,5 +12,6 @@ jQuery(".optn").click(function() {
         body: JSON.stringify(data)
     };
     fetch("/update", passing);
+    // fetch(`/update/${pollID}`, passing);
 });
 

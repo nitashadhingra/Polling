@@ -8,67 +8,68 @@
         <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> -->
     </head>
     <body>
-
-        <h2 class="ui header">
-            <i class="plug icon"></i>
-            <div class="content">
-                CREATE YOUR POLL
-            </div>
-            <div class="sub header">Type your question</div>
-        </h2>
-
         <div class="container">
-            <header class="jumbotron">
-                <div class="container">
-                    <i class="fas fa-poll-h"></i>
-                    <p></p>
+            <h2 class="ui header">
+                <i class="plug icon"></i>
+                <div class="content">
+                    CREATE YOUR POLL
                 </div>
-            </header>
-
-            <form class="ui form" action="/polls" method="POST">
-                <div class="fields">
-                  <div class="eight wide field">
-                    <label>Heading</label>
-                    <input type="text" name="heading" placeholder="Heading">
-                  </div>
-                  
-                  
-                </div>
-                <div class="fields">
-                    <div class="twelve wide field">
-                        <label>Shoot you Question</label>
-                        <input type="text" name="question" placeholder="Question">
-                    
+                <div class="sub header">Type your question</div>
+            </h2>
+    
+            <div class="container">
+                <header class="jumbotron">
+                    <div class="container">
+                        <i class="fas fa-poll-h"></i>
+                        <p></p>
                     </div>
-                </div>
-                <div class="fields">
-                        <!-- <div class="four wide field">
-                        <label>How many options?</label>
-                        <input class="optn" name="n" type="number" placeholder="1-10?">
+                </header>
+    
+                <form class="ui form" action="/polls" method="POST">
+                    <div class="fields">
+                      <div class="eight wide field">
+                        <label>Heading</label>
+                        <input type="text" name="heading" placeholder="Heading">
                       </div>
-                      for(var i=0 ; i<n ; i++){
-
-                      } -->
-                      <div class="six wide field">
-                        <label>Option</label>
-                        <input class="optn" name="op" type="text" placeholder="A">
-                      </div>
-                      <div class="six wide field">
-                        <label>Option</label>
-                        <input class="optn" name="op" type="text" placeholder="B">
-                      </div>
-                      <div class="six wide field">
-                        <label>Option</label>
-                        <input class="optn" name="op" type="text" placeholder="C">
-                      </div>
-                      <div class="six wide field">
-                        <label>Option</label>
-                        <input class="optn" name="op" type="text" placeholder="D">
-                      </div>
-                </div>
-              </div>
-              <button class="ui button" type="submit">Submit</button>
-            </form>
+                    </div>
+                    <div class="fields">
+                        <div class="twelve wide field">
+                            <label>Shoot you Question</label>
+                            <input type="text" name="question" placeholder="Question">
+                        
+                        </div>
+                    </div>
+                    <div class="fields">
+                            <!-- <div class="four wide field">
+                            <label>How many options?</label>
+                            <input class="optn" name="n" type="number" placeholder="1-10?">
+                          </div>
+                          for(var i=0 ; i<n ; i++){
+    
+                          } -->
+                          <div class="six wide field">
+                            <label>Option</label>
+                            <input class="optn" name="op" type="text" placeholder="A">
+                          </div>
+                          <div class="six wide field">
+                            <label>Option</label>
+                            <input class="optn" name="op" type="text" placeholder="B">
+                          </div>
+                          <div class="six wide field">
+                            <label>Option</label>
+                            <input class="optn" name="op" type="text" placeholder="C">
+                          </div>
+                          <div class="six wide field">
+                            <label>Option</label>
+                            <input class="optn" name="op" type="text" placeholder="D">
+                          </div>
+                    </div>
+                  </div>
+                  <button class="ui button" type="submit">Submit</button>
+                </form>
+            </div>
+        </div>
+        
             <!-- <section>
                 <div id = "optns">
                     <form action="/polls" method="POST">
@@ -95,7 +96,6 @@
             <!-- <div id = "buttons">
                 <button><a href="result.html">View result</a></button>
             </div> -->
-    </div>
     <!-- <script type="text/javascript" src="javascripts/newpoll.js"></script> -->
     </body>
 </html>
