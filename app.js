@@ -15,7 +15,6 @@ mongoose.connect('mongodb://localhost/new_db', {
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static('public'));
 app.use(express.json());
-app.use(methodOverride('_method'));
 
 app.set('views', path.join(__dirname, 'views'));
 app.set("view engine", "ejs");
@@ -73,7 +72,7 @@ app.post("/polls", async (req, res) => {
     const newPoll = {
         heading: req.body.heading, 
         question: req.body.question, 
-        options: req.body.op.map(yourOption => ({ name: yourOption, count: 0 }))
+        options: req.body.op.map(yourOption => ({ name: yourOption, count: 0 })) 
     };
 
     Poll.create(newPoll, function(err, polled){

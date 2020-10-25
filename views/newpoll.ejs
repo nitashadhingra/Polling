@@ -2,13 +2,15 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <script src="style.js"></script>
+        <link rel="stylesheet" type="text/css" href="/css/new.css">
         <title>Live Poll</title>
+
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
-        <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        
     </head>
     <body>
-        <div class="container">
+        <!-- <div class="container" id="boxed">
             <h2 class="ui header">
                 <i class="plug icon"></i>
                 <div class="content">
@@ -17,7 +19,7 @@
                 <div class="sub header">Type your question</div>
             </h2>
     
-            <div class="container">
+            <div class="enter">
                 <header class="jumbotron">
                     <div class="container">
                         <i class="fas fa-poll-h"></i>
@@ -39,7 +41,7 @@
                         
                         </div>
                     </div>
-                    <div class="fields">
+                    <div class="fields"> -->
                             <!-- <div class="four wide field">
                             <label>How many options?</label>
                             <input class="optn" name="n" type="number" placeholder="1-10?">
@@ -47,29 +49,56 @@
                           for(var i=0 ; i<n ; i++){
     
                           } -->
-                          <div class="six wide field">
-                            <label>Option</label>
-                            <input class="optn" name="op" type="text" placeholder="A">
-                          </div>
-                          <div class="six wide field">
-                            <label>Option</label>
-                            <input class="optn" name="op" type="text" placeholder="B">
-                          </div>
-                          <div class="six wide field">
-                            <label>Option</label>
-                            <input class="optn" name="op" type="text" placeholder="C">
-                          </div>
-                          <div class="six wide field">
-                            <label>Option</label>
-                            <input class="optn" name="op" type="text" placeholder="D">
-                          </div>
-                    </div>
+
+
+        <div id="enter">
+            <h1>Create your Poll</h1>
+            <input id="question" name="question" placeholder="Question" type="text">
+            <ul style="list-style-type:none;">
+                <li>
+                    <div class="six wide field">
+                        <p>
+                           <input class="options" name="options" placeholder="Option" type="text">  <span class="del">X</span></p>                
+                        
+                      </div>
+                </li>
+                <li>
+                    <div class="six wide field">
+                        <p><input class="options" name="options" placeholder="Option" type="text"> <span class="del">X</span></p>
+                        
+                      </div>
+                </li>
+                <li>
+                    <div class="six wide field">
+                        <p><input class="options" name="options" placeholder="Option" type="text"> <span class="del">X</span></p>
+                        
+                      </div>
+                </li>
+                <li>
+                    <div class="six wide field">
+                        <p>
+                        <input class="options" name="options" placeholder="Option" type="text"> <span class="del">X</span></p> 
+                      </div>
+                </li>
+          </ul>
+          <button type="button" class="btn btn-light"><span class="add">Add another+</span></button> 
+        </div>
+                          
+                          
+                          
+                          
+                          
+                    <!-- </div>
                   </div>
                   <button class="ui button" type="submit">Submit</button>
                 </form>
             </div>
-        </div>
+        </div> -->
         
+
+
+
+
             <!-- <section>
                 <div id = "optns">
                     <form action="/polls" method="POST">
@@ -97,5 +126,7 @@
                 <button><a href="result.html">View result</a></button>
             </div> -->
     <!-- <script type="text/javascript" src="javascripts/newpoll.js"></script> -->
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript" src="/javascripts/new.js"></script>
     </body>
 </html>

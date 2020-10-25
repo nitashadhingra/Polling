@@ -1,0 +1,15 @@
+#enter{
+    background: royalblue;
+    width:360px;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+input{
+    padding: 8px;
+    margin: 8px !important;
+}
+
+.btn{
+    margin: 8px;
+}
